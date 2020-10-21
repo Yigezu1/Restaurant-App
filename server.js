@@ -24,22 +24,25 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/make", function(req, res) {
-  res.sendFile(path.join(__dirname, "make.html"));
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 // Displays all characters
-app.get("/view", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // Displays a single character, or returns false
-app.get("/api", function(req, res) {
-    res.json(array1);
+app.get("/api/tables", function(req, res) {
+    res.json(reservations);
 });
 
+app.get("/api/waitlist", function(req, res) {
+  res.json(waitlist);
+});
 // Create New Characters - takes in JSON input
-app.post("/api/characters", function(req, res) {
+app.post("/api/tables", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newCharacter = req.body;
@@ -54,6 +57,8 @@ app.post("/api/characters", function(req, res) {
 
   res.json(newCharacter);
 });
+
+
 
 // Starts the server to begin listening
 // =============================================================
