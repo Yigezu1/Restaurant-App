@@ -15,12 +15,13 @@ app.use(express.json());
 // mini project (DATA)
 // =============================================================
 const reservations = [];
+const waitlist = [];
 // Routes
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/make", function(req, res) {
