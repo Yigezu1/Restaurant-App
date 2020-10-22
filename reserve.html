@@ -104,7 +104,7 @@
       customerID: $('#reserve_uniqueID').val().trim()
     };
 
-    console.log(newReservation);
+    // console.log(newReservation);
 
     // This line is the magic. It's very similar to the standard ajax function we used.
     // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
@@ -117,7 +117,7 @@
 
     $.post(currentURL + "/api/tables", newReservation,
       function (data) {
-
+      console.log(data);
         // If a table is available... tell user they are booked.
         if (data==true) {
           alert("Yay! You are officially booked!")
