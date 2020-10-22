@@ -45,17 +45,18 @@ app.get("/api/waitlist", function(req, res) {
 app.post("/api/tables", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
-  var newCharacter = req.body;
+  var newReservation = req.body;
+  
 
-  // Using a RegEx Pattern to remove spaces from newCharacter
+  // Using a RegEx Pattern to remove spaces from newReservation
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+  // newReservation.id = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newCharacter);
+  // console.log(newReservation);
 
-  characters.push(newCharacter);
+  // characters.push(newReservation);
 
-  res.json(newCharacter);
+  // res.json(newReservation);
 });
 
 
